@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "target": "es2019",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "module": "commonjs",
+        "rootDir": "./src",
+        "baseUrl": "./src",
+        "paths": {
+            "@modules/*": [
+                "modules/*"
+            ],
+            "@config/*": [
+                "config/*"
+            ],
+            "@shared/*": [
+                "shared/*"
+            ],
+            "@errors/*": [
+                "errors/*"
+            ],
+            "@utils/*": [
+                "utils/*"
+            ]
+        },
+        "resolveJsonModule": true,
+        "allowJs": true,
+        "outDir": "./dist",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "./dist"
+    ]
+}
