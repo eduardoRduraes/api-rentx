@@ -42,6 +42,7 @@ jobs:
           key:  ${{ secrets.SSH_KEY }}
           script: |
             cd ~/app/api-rentx
-            ./node_modules/.bin/typeorm migration:run
+            npm install
+            npm run typeorm migration:run
             pm2 restart rentx_api
      
