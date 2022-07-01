@@ -37,12 +37,12 @@ jobs:
         uses: appleboy/ssh-action@master
         with:        
           host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
+          username: ${{ secrets.SSH_USER }}          
+          key:  ${{ secrets.SSH_KEY }} 
           port: ${{ secrets.SSH_PORT }}
-          key:  ${{ secrets.SSH_KEY }}
           script: |
-            cd ~/app/api-rentx
+            cd ~/app/api-rentx/
             npm install
-            ./node_modules/.bin/typeorm/migration:run
+            ./node_modules/.bin/typeorm migration:run
             pm2 restart rentx_api
      
