@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
     
   workflow_dispatch:
   
@@ -30,7 +30,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           port: ${{ secrets.SSH_PORT }}
           key:  ${{ secrets.SSH_KEY }} 
-          source: "., !node_modules"
+          source: "., !node_modules, !ormconfing.json, !docker-compose.yml"
           target: "~/app/api-rentx" 
       
       - name: Update API
@@ -39,7 +39,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}          
           key:  ${{ secrets.SSH_KEY }} 
-          port: ${{ secrets.SSH_PORT }}
+          port: ${{ secrets.SSH_PORT }}          
           script: |
             cd ~/app/api-rentx/
             npm install
