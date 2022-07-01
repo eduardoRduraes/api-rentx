@@ -43,6 +43,6 @@ jobs:
           script: |
             cd ~/app/api-rentx
             npm install
-            npm run typeorm migration:run
+            ./node_modules/.bin/typeorm/migration:run
             pm2 restart rentx_api
      
