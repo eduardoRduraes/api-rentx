@@ -40,7 +40,9 @@ jobs:
           username: ${{ secrets.SSH_USER }}          
           key:  ${{ secrets.SSH_KEY }} 
           port: ${{ secrets.SSH_PORT }}          
-          script: | 
+          script: |
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh 
             cd ~/app/api-rentx
             npm install
      
