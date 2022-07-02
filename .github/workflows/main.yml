@@ -37,7 +37,6 @@ jobs:
         uses: appleboy/ssh-action@master
         with:        
           host: ${{ secrets.SSH_HOST }}
-          sync: true
           username: ${{ secrets.SSH_USER }}          
           key:  ${{ secrets.SSH_KEY }} 
           port: ${{ secrets.SSH_PORT }}          
