@@ -43,7 +43,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}          
           script: | 
                   cd ~/app/api-rentx/ 
-                  npm install
+                  yarn
                   ./node_modules/.bin/typeorm migration:run
                   pm2 restart rentx_api
      
