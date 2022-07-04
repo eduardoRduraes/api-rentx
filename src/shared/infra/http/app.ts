@@ -11,11 +11,15 @@ import { AppError } from "@shared/errors/AppError";
 import swaggerFile from "../../../swagger.json";
 import "../../container";
 import createConnection from "../typeorm";
+import rateLimiter from "./middleware/rateLimiter";
 import { router } from "./routes";
 
 createConnection();
 
 const app = express();
+
+app.use(rateLimiter);
+
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use(express.json());
 app.use(cors());
